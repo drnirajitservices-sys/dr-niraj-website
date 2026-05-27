@@ -2,19 +2,19 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-gradient-to-b from-white to-slate-50"
+      className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
 
         <div className="text-center mb-16">
 
-          <h2 className="text-5xl font-bold text-slate-900 mt-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4">
             Dr. Niraj Kumar
           </h2>
 
-          <p className="mt-2 text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="mt-2 text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
             General Physician
           </p>
 
@@ -22,11 +22,11 @@ export default function About() {
 
         {/* Main Grid */}
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Video Section */}
 
-          <div className="relative">
+          <div className="relative max-w-md mx-auto lg:max-w-none">
 
             <div className="absolute inset-0 bg-blue-300/20 blur-3xl rounded-full" />
 
@@ -34,11 +34,10 @@ export default function About() {
               <video
                 src="/dr_neerajintro.mp4"
                 autoPlay
-                muted
                 loop
                 playsInline
                 controls
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover max-h-[500px]"
               />
 
             </div>
@@ -49,19 +48,19 @@ export default function About() {
 
           <div>
 
-            <div className="inline-block bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-medium">
+            <div className="inline-block bg-blue-100 text-blue-700 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium">
               16+ Years of Medical Excellence
             </div>
 
-            <h3 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-6 leading-tight tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-900 mt-6 leading-tight tracking-tight">
               Senior Consultant, General Medicine
             </h3>
 
-            <p className="mt-4 text-xl text-blue-700 font-semibold">
+            <p className="mt-4 text-base sm:text-lg md:text-xl text-blue-700 font-semibold leading-relaxed">
               Sharda Care Healthcity & Amrit Multispeciality Clinic
             </p>
 
-            <p className="mt-8 text-slate-600 leading-relaxed text-lg">
+            <p className="mt-8 text-slate-600 leading-relaxed text-base md:text-lg">
               Dr. Niraj is an experienced physician with over 16 years
               of expertise in General Medicine. He earned his MD from
               Command Hospital, Indian Armed Forces, Western Command,
@@ -69,13 +68,13 @@ export default function About() {
               and his MBBS from JIPMER, Pondicherry.
             </p>
 
-            <p className="mt-6 text-slate-600 leading-relaxed text-lg">
+            <p className="mt-6 text-slate-600 leading-relaxed md:text-lg">
               His areas of specialisation include Diabetes,
               Gastroenterology, Pulmonology, Nephrology,
               Cardiology, and Neurology.
             </p>
 
-            <p className="mt-6 text-slate-600 leading-relaxed text-lg">
+            <p className="mt-6 text-slate-600 leading-relaxed md:text-lg">
               He has managed 200-bedded speciality hospitals,
               served with the United Nations in Africa,
               and published research on Type 1 Diabetes
@@ -86,7 +85,7 @@ export default function About() {
 
             <div className="mt-10 space-y-5">
 
-              <div className="bg-blue-50 rounded-2xl p-5 shadow-md border border-slate-100">
+              <div className="bg-blue-50 rounded-2xl p-4 md:p-5 shadow-md border border-slate-100">
                 <p className="font-semibold text-slate-900">
                   1. Chief Medical Officer / Commandant (Medical)
                 </p>
@@ -97,7 +96,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-blue-50 rounded-2xl p-5 shadow-md border border-slate-100">
+              <div className="bg-blue-50 rounded-2xl p-4 md:p-5 shadow-md border border-slate-100">
                 <p className="font-semibold text-slate-900">
                   2. Senior Medical Officer
                 </p>
@@ -108,7 +107,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-blue-50 rounded-2xl p-5 shadow-md border border-slate-100">
+              <div className="bg-blue-50 rounded-2xl p-4 md:p-5 shadow-md border border-slate-100">
                 <p className="font-semibold text-slate-900">
                   3. Junior Resident Doctor
                 </p>
@@ -130,11 +129,11 @@ export default function About() {
 
         <div className="mt-24">
 
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10">
 
             {/* Certifications */}
 
-            <div className="bg-gradient-to-br from-blue-900  to-slate-900 rounded-[2.5rem] p-8 shadow-2xl overflow-hidden relative">
+            <div className="bg-gradient-to-br from-blue-900  to-slate-900 rounded-[2.5rem] p-6 md:p-8 shadow-2xl overflow-hidden relative">
 
               {/* Background Glow */}
 
@@ -144,7 +143,7 @@ export default function About() {
 
               <div className="relative z-10">
 
-                <h4 className="text-4xl font-extrabold text-white mb-10 tracking-tight">
+                <h4 className="text-2xl md:text-4xl font-extrabold text-white mb-10 tracking-tight">
                   Certifications
                 </h4>
 
@@ -251,7 +250,7 @@ export default function About() {
 
                 {/* Heading */}
 
-                <h4 className="text-4xl font-extrabold text-white mb-10 tracking-tight">
+                <h4 className="text-2xl md:text-4xl font-extrabold text-white mb-10 tracking-tight">
                   Publications
                 </h4>
 
@@ -268,7 +267,7 @@ export default function About() {
                     className="group block bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/15 transition-all duration-500 hover:-translate-y-1"
                   >
 
-                    <div className="flex items-start justify-between gap-5">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-5">
 
                       <div>
 
@@ -309,7 +308,7 @@ export default function About() {
                     className="group block bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/15 transition-all duration-500 hover:-translate-y-1"
                   >
 
-                    <div className="flex items-start justify-between gap-5">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-5">
 
                       <div>
 
@@ -360,7 +359,7 @@ export default function About() {
                 {/* Heading */}
 
 
-                <h4 className="text-4xl font-extrabold text-white mb-10 tracking-tight">
+                <h4 className="text-2xl md:text-4xl font-extrabold text-white mb-10 tracking-tight">
                   Memberships
                 </h4>
 
@@ -447,7 +446,7 @@ export default function About() {
 
   <div className="text-center mb-16">
 
-    <h3 className="text-5xl font-extrabold text-slate-900 tracking-tight">
+    <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
        Patient's Feedback
     </h3>
 
@@ -455,11 +454,11 @@ export default function About() {
 
   {/* Feedback Cards */}
 
-  <div className="grid lg:grid-cols-3 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
 
     {/* Feedback 1 */}
 
-    <div className="group bg-blue-50 rounded-[2rem] h-full p-7 shadow-xl border border-blue-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+    <div className="group bg-blue-50 rounded-[2rem] h-full p-5 md:p-7 shadow-xl border border-blue-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
 
       <p className="mt-8 text-slate-600 leading-relaxed text-lg">
         My father was admitted to ShardaCare Hospital after a heart attack.
@@ -483,7 +482,7 @@ export default function About() {
 
     {/* Feedback 2 */}
 
-    <div className="group bg-blue-50 via-blue-500 to-blue-700 rounded-[2rem] h-full p-7 shadow-2xl hover:shadow-blue-300/50 hover:-translate-y-2 transition-all duration-500 text-white relative overflow-hidden">
+    <div className="group bg-blue-50 rounded-[2rem] h-full p-5 md:p-7 shadow-2xl hover:shadow-blue-300/50 hover:-translate-y-2 transition-all duration-500 text-white relative overflow-hidden">
 
       {/* Glow */}
 
@@ -514,7 +513,7 @@ export default function About() {
 
     {/* Feedback 3 */}
 
-    <div className="group bg-blue-50 rounded-[2rem] h-full p-7 shadow-xl border border-blue-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+    <div className="group bg-blue-50 rounded-[2rem] h-full p-5 md:p-7 shadow-xl border border-blue-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
 
       <p className="mt-8 text-slate-600 leading-relaxed text-lg">
         My brother was treated by Dr. Niraj Sir for kidney stones.
