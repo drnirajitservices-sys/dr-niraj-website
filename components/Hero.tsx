@@ -107,7 +107,7 @@ export default function Hero() {
                 <img
                   src={slide.mobileImage}
                   alt="carousel-mobile"
-                  className="w-full h-full object-cover md:hidden"
+                  className="w-full h-full object-contain md:hidden"
                 />
               )}
 
