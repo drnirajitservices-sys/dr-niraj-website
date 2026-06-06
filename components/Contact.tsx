@@ -72,7 +72,7 @@ export default function Contact() {
                 </p>
 
                 <p className="text-slate-600">
-                  drnirajitservices@gmail.com
+                  drnirajinfo@gmail.com
                 </p>
               </div>
 
@@ -82,7 +82,7 @@ export default function Contact() {
                 </p>
 
                 <p className="text-slate-600">
-                  Monday - Saturday | 9AM - 5PM
+                  Monday - Saturday (Sunday closed) | 9AM - 5PM
                 </p>
               </div>
 
@@ -134,7 +134,7 @@ export default function Contact() {
                 </p>
 
                 <p className="text-slate-600">
-                  drnirajitservices@gmail.com
+                  drnirajiinfo@gmail.com
                 </p>
               </div>
 
@@ -144,7 +144,7 @@ export default function Contact() {
                 </p>
 
                 <p className="text-slate-600">
-                  Monday - Saturday | 6PM - 8PM
+                  Monday - Sunday (Thursday closed) | 6PM - 8PM
                 </p>
               </div>
 

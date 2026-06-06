@@ -13,19 +13,67 @@ export function Appointment() {
     phone: "",
     email: "",
     clinic: "",
+    date: "",
     problem: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  e: React.ChangeEvent<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >
+) => {
+  if (e.target.name === "clinic") {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      clinic: e.target.value,
+      date: "", // reset date when clinic changes
     });
-  };
+    return;
+  }
+
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleDateChange = (
+  e: React.ChangeEvent<HTMLInputElement>
+) => {
+  const selectedDate = new Date(e.target.value);
+
+  const day = selectedDate.getDay();
+
+  // Sunday = 0
+  if (
+    formData.clinic === "ShardaCare Health City (9AM - 5PM)" &&
+    day === 0
+  ) {
+    alert("ShardaCare Health City is closed on Sundays.");
+    return;
+  }
+
+  // Thursday = 4
+  if (
+    formData.clinic === "Amrit Multispeciality Clinic (6PM - 8PM)" &&
+    day === 4
+  ) {
+    alert("Amrit Multispeciality Clinic is closed on Thursdays.");
+    return;
+  }
+
+  setFormData({
+    ...formData,
+    date: e.target.value,
+  });
+};
 
   const handleSubmit = (e: React.FormEvent) => {
+    
+    if (!formData.date) {
+  alert("Please select an appointment date.");
+  return;
+}
     e.preventDefault();
 
     const message = `
@@ -37,6 +85,7 @@ Name: ${formData.name}
 Phone: ${formData.phone}
 Email: ${formData.email}
 Clinic: ${formData.clinic}
+Date: ${formData.date}
 Problem: ${formData.problem}
 `;
 
@@ -106,10 +155,7 @@ Problem: ${formData.problem}
                 onChange={handleChange}
                 className="w-full border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-blue-600 bg-white"
               >
-
-                <option value="">
-                  Select Clinic
-                </option>
+                <option value="">Select Clinic</option>
 
                 <option value="ShardaCare Health City (9AM - 5PM)">
                   ShardaCare Health City (9AM - 5PM)
@@ -118,14 +164,15 @@ Problem: ${formData.problem}
                 <option value="Amrit Multispeciality Clinic (6PM - 8PM)">
                   Amrit Multispeciality Clinic (6PM - 8PM)
                 </option>
-
               </select>
 
-              <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5">
-                <p className="text-blue-900 font-medium text-lg">
-                  Availability: Monday to Saturday
-                </p>
-              </div>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleDateChange}
+                className="w-full border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-blue-600 bg-white"
+              />
 
               <textarea
                 rows={5}
@@ -170,6 +217,17 @@ Problem: ${formData.problem}
 
                 <div className="bg-white/10 rounded-2xl p-5 border border-white/10">
                   <p className="text-blue-200 font-semibold mb-2">
+                    Availability
+                  </p>
+
+                  <p className="text-slate-200">
+                    Monday - Saturday
+                    (Sunday Closed)
+                  </p>
+                </div>
+
+                <div className="bg-white/10 rounded-2xl p-5 border border-white/10">
+                  <p className="text-blue-200 font-semibold mb-2">
                     Timings
                   </p>
 
@@ -200,6 +258,17 @@ Problem: ${formData.problem}
                   <p className="text-blue-50 leading-relaxed">
                     Amrit Complex, Pi-1, B-003, Birondi, Near Unitech Horizon, Gate No. 1, Greater Noida,
                     Uttar Pradesh 201310
+                  </p>
+                </div>
+
+                <div className="bg-white/10 rounded-2xl p-5 border border-white/10">
+                  <p className="text-blue-100 font-semibold mb-2">
+                    Availability
+                  </p>
+
+                  <p className="text-blue-50">
+                    Monday - Sunday
+                    (Thursday Closed)
                   </p>
                 </div>
 

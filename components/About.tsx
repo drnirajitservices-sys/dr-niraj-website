@@ -26,18 +26,18 @@ export default function About() {
 
           {/* Video Section */}
 
-          <div className="relative max-w-md mx-auto lg:max-w-none">
+          <div className="relative w-full lg:max-w-[450px] xl:max-w-[500px] mx-auto">
 
             <div className="absolute inset-0 bg-blue-300/20 blur-3xl rounded-full" />
 
-            <div className="sticky top-28 relative bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100">
+            <div className="sticky top-28 relative w-full max-w-[500px] xl:max-w-[550px] mx-auto bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100">
               <video
                 src="/dr_neerajintro.mp4"
                 autoPlay
                 loop
                 playsInline
                 controls
-                className="w-full h-full object-cover max-h-[500px]"
+                className="w-full h-full object-cover max-h-[750px]"
               />
 
             </div>

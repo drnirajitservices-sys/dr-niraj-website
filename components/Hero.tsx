@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     type: "image",
-    image: "/carousel1.jpeg",
+    desktopImage: "/carousel1.jpeg",
+    mobileImage: "/carousel1mobile.jpeg",
   },
 
   {
@@ -76,13 +77,13 @@ export default function Hero() {
 
   const handlePause = () => {
 
-  setIsPaused(true);
+    setIsPaused(true);
 
-  setTimeout(() => {
-    setIsPaused(false);
-  }, 8000);
+    setTimeout(() => {
+      setIsPaused(false);
+    }, 8000);
 
-};
+  };
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] overflow-hidden">
@@ -90,25 +91,35 @@ export default function Hero() {
       {slides.map((slide, index) => (
 
         <div
-  key={index}
-  onClick={handlePause}
-  className={`absolute inset-0 transition-opacity duration-1000 cursor-pointer overflow-y-autos${
-    currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
-  }`}
->
+          key={index}
+          onClick={handlePause}
+          className={`absolute inset-0 transition-opacity duration-1000 cursor-pointer overflow-y-autos${currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+        >
 
           {/* Slide 1 */}
 
           {slide.type === "image" && (
             <div className="w-full h-full bg-gradient-to-br from-blue-100 via-slate-50 to-blue-100 flex items-center justify-center">
 
-  <img
-    src={slide.image}
-    alt="carousel"
-    className="w-full h-full object-contain"
-  />
+              {/* Mobile version */}
+              {slide.mobileImage && (
+                <img
+                  src={slide.mobileImage}
+                  alt="carousel-mobile"
+                  className="w-full h-full object-cover md:hidden"
+                />
+              )}
 
-</div>
+              {/* Desktop version */}
+              <img
+                src={slide.desktopImage || slide.image}
+                alt="carousel"
+                className={`w-full h-full object-contain ${slide.mobileImage ? "hidden md:block" : ""
+                  }`}
+              />
+
+            </div>
           )}
 
           {/* Slide 2 */}
@@ -178,9 +189,9 @@ export default function Hero() {
                         className="bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-lg hover:bg-white/15 hover:translate-x-2 transition-all duration-300"
                       >
 
-                      <p className="text-lg leading-relaxed text-slate-100">
-                        {point}
-                      </p>
+                        <p className="text-lg leading-relaxed text-slate-100">
+                          {point}
+                        </p>
 
                       </div>
                     ))}
@@ -259,11 +270,10 @@ export default function Hero() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === index
+            className={`w-3 h-3 rounded-full ${currentSlide === index
                 ? "bg-white"
                 : "bg-white/40"
-            }`}
+              }`}
           />
 
         ))}

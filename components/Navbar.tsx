@@ -20,7 +20,7 @@ export default function Navbar() {
           <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-blue-100 shadow-sm flex-shrink-0">
 
             <Image
-              src="/logo.png"
+              src="/logonew.png"
               alt="Doctor Logo"
               fill
               className="object-cover"
